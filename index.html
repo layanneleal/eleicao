@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eleição</title>
+</head>
+<body>
+  <h1>Verificador de idade</h1>
+  Qual a sua idade? <input type="number" name="idade" id="vidade">
+  <input type="button" value="Verificar" onclick="calcular()"> 
+
+  <div id="res">
+
+  </div>
+  <script>
+    function calcular() { 
+      let vidade= document.querySelector('input#vidade')
+      let res= document.querySelector('div#res')
+      let idade= Number(vidade.value)
+      
+      res.innerHTML= `<p>Você tem <strong>${idade}</strong> anos!</p>` 
+
+    if (idade < 16) {
+        
+      res.innerHTML += `<p>Você <strong>não</strong> tem idade suficiente para votar!</p>` 
+
+    }else if (idade < 18 || idade >= 65){
+      res.innerHTML += `<p>Voto <strong>opcional!</strong></p>`
+
+    }else {
+      res.innerHTML += `<p>Voto <strong>obrigatótio!</strong></p>`
+      }
+
+    }
+      
+  </script>
+</body>
+</html>
